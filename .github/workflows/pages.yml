@@ -30,7 +30,7 @@ jobs:
         run: node scripts/build.mjs
       - name: Install test-only tools
         run: |
-          npm install --ignore-scripts --no-audit --no-fund
+          npm ci --ignore-scripts --no-audit --no-fund
           npx playwright install --with-deps chromium
       - name: Test the real built website
         run: node scripts/check.mjs
@@ -79,6 +79,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v4
       - name: Inspect Pages configuration
         env:
           GH_TOKEN: ${{ github.token }}
@@ -90,3 +91,13 @@ jobs:
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify published pages and assets over HTTPS
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python3 scripts/verify-live.py
+      - name: Save live verification evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-verification
+          path: live-checks.json
+          retention-days: 30
