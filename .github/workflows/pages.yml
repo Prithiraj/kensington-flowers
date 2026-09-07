@@ -1,0 +1,92 @@
+name: Build, test and publish website
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: kensington-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare licensed photographs
+        run: |
+          python -m pip install Pillow==11.3.0
+          python scripts/media.py
+      - name: Build static HTML
+        run: node scripts/build.mjs
+      - name: Install test-only tools
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Test the real built website
+        run: node scripts/check.mjs
+      - name: Save source, website, screenshots and QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: implementation-review
+          include-hidden-files: true
+          path: |
+            public/
+            assets/
+            scripts/
+            docs/
+            qa/
+            site.json
+            package.json
+            package-lock.json
+            README.md
+            .github/workflows/pages.yml
+          retention-days: 30
+      - name: Publish generated site to gh-pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin gh-pages
+          git worktree add /tmp/kensington-pages gh-pages
+          rsync -a --delete --exclude=.git public/ /tmp/kensington-pages/
+          cd /tmp/kensington-pages
+          git add --all
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish tested website from ${GITHUB_SHA}"
+            git push origin gh-pages
+          fi
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Inspect Pages configuration
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh api "repos/${GITHUB_REPOSITORY}/pages"; then
+            echo '::error::GitHub Pages is not enabled yet. Open Settings > Pages and select GitHub Actions, then re-run this deployment job. The site is also available on the generated gh-pages branch.'
+            exit 1
+          fi
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
