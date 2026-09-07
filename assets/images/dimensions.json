@@ -1,0 +1,56 @@
+[
+  {
+    "id": "bouquet",
+    "width": 960,
+    "height": 1440,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  {
+    "id": "garlands",
+    "width": 960,
+    "height": 1280,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  {
+    "id": "basket",
+    "width": 960,
+    "height": 1440,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  {
+    "id": "roses",
+    "width": 960,
+    "height": 636,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  {
+    "id": "handtied",
+    "width": 960,
+    "height": 1280,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  {
+    "id": "peony",
+    "width": 960,
+    "height": 1280,
+    "widths": [
+      480,
+      960
+    ]
+  }
+]
