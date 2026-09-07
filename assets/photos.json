@@ -1,8 +1,74 @@
 [
-  {"id":"bouquet","url":"https://images.unsplash.com/photo-1629141731648-0bce61cf4f7e?auto=format&fit=crop&w=1600&q=85&fm=jpg","source":"https://unsplash.com/photos/VqLB9qE9C4o","creator":"Daniel Diesenreither","license":"Unsplash License","licenseUrl":"https://unsplash.com/license","alt":"Pink and white roses with silvery foliage and a white ribbon; illustrative bouquet, not Kensington's work.","label":"Soft pinks & whites","category":"everyday","status":"licensed-illustrative"},
-  {"id":"garlands","url":"https://upload.wikimedia.org/wikipedia/commons/c/cb/India_-_Colours_of_India_-_Flower_garlands_for_sale_2_%282508074680%29.jpg","source":"https://commons.wikimedia.org/wiki/File:India_-_Colours_of_India_-_Flower_garlands_for_sale_2_(2508074680).jpg","creator":"McKay Savage","license":"CC BY 2.0","licenseUrl":"https://creativecommons.org/licenses/by/2.0/","alt":"Pink and yellow flower garlands with green leaves photographed in Chennai; an illustrative reference, not Kensington's work.","label":"Colour & ceremony","category":"ceremony","status":"licensed-illustrative"},
-  {"id":"basket","url":"https://images.unsplash.com/photo-1649894158708-bd47ad9ef4e3?auto=format&fit=crop&w=1600&q=85&fm=jpg","source":"https://unsplash.com/photos/4VGVpoD3TFM","creator":"Mathias Reding","license":"Unsplash License","licenseUrl":"https://unsplash.com/license","alt":"Paper-wrapped pink tulips in a wicker basket; illustrative photography, not the Kensington shop.","label":"Everyday beauty","category":"everyday","status":"licensed-illustrative"},
-  {"id":"roses","url":"https://images.unsplash.com/photo-1713094010599-e7eab2dcc6f0?auto=format&fit=crop&w=1600&q=85&fm=jpg","source":"https://unsplash.com/photos/NJlXlUsB4XA","creator":"Nika Benedictova","license":"Unsplash License","licenseUrl":"https://unsplash.com/license","alt":"Red and pink roses with greenery on a wooden table; illustrative flowers, not Kensington's work.","label":"A little colour","category":"everyday","status":"licensed-illustrative"},
-  {"id":"handtied","url":"https://images.unsplash.com/photo-1588344959291-bbdc8f6e5942?auto=format&fit=crop&w=1600&q=85&fm=jpg","source":"https://unsplash.com/photos/8iSF6rgaT2M","creator":"Maya Katkova","license":"Unsplash License","licenseUrl":"https://unsplash.com/license","alt":"A hand holding pink flowers and delicate white blooms against a curtain; illustrative bouquet, not Kensington's work.","label":"Something thoughtful","category":"everyday","status":"licensed-illustrative"},
-  {"id":"peony","url":"https://images.unsplash.com/photo-1592930452381-101e01765b86?auto=format&fit=crop&w=1600&q=85&fm=jpg","source":"https://unsplash.com/photos/1Vv-qzoSoow","creator":"Evie Fjord","license":"Unsplash License","licenseUrl":"https://unsplash.com/license","alt":"A single deep pink peony with green leaves on a pale surface; illustrative floral detail.","label":"In the details","category":"everyday","status":"licensed-illustrative"}
+  {
+    "id": "bouquet",
+    "url": "https://images.unsplash.com/photo-1629141731648-0bce61cf4f7e?auto=format&fit=crop&w=1600&q=85&fm=jpg",
+    "source": "https://unsplash.com/photos/VqLB9qE9C4o",
+    "creator": "Daniel Diesenreither",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "alt": "Pink and white roses with silvery foliage and a white ribbon; illustrative bouquet, not Kensington's work.",
+    "label": "Soft pinks & whites",
+    "category": "everyday",
+    "status": "licensed-illustrative"
+  },
+  {
+    "id": "garlands",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/India_-_Colours_of_India_-_Flower_garlands_for_sale_2_%282508074680%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:India_-_Colours_of_India_-_Flower_garlands_for_sale_2_(2508074680).jpg",
+    "creator": "McKay Savage",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "alt": "Pink and yellow flower garlands with green leaves photographed in Chennai; an illustrative reference, not Kensington's work.",
+    "label": "Colour & ceremony",
+    "category": "ceremony",
+    "status": "licensed-illustrative"
+  },
+  {
+    "id": "basket",
+    "url": "https://images.unsplash.com/photo-1649894158708-bd47ad9ef4e3?auto=format&fit=crop&w=1600&q=85&fm=jpg",
+    "source": "https://unsplash.com/photos/4VGVpoD3TFM",
+    "creator": "Mathias Reding",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "alt": "Paper-wrapped pink flowers in a wicker basket; illustrative photography, not the Kensington shop.",
+    "label": "Everyday beauty",
+    "category": "everyday",
+    "status": "licensed-illustrative"
+  },
+  {
+    "id": "roses",
+    "url": "https://images.unsplash.com/photo-1713094010599-e7eab2dcc6f0?auto=format&fit=crop&w=1600&q=85&fm=jpg",
+    "source": "https://unsplash.com/photos/NJlXlUsB4XA",
+    "creator": "Nika Benedictova",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "alt": "Red and pink roses with greenery on a wooden table; illustrative flowers, not Kensington's work.",
+    "label": "A little colour",
+    "category": "everyday",
+    "status": "licensed-illustrative"
+  },
+  {
+    "id": "handtied",
+    "url": "https://images.unsplash.com/photo-1588344959291-bbdc8f6e5942?auto=format&fit=crop&w=1600&q=85&fm=jpg",
+    "source": "https://unsplash.com/photos/8iSF6rgaT2M",
+    "creator": "Maya Katkova",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "alt": "A hand holding pink flowers and delicate white blooms against a curtain; illustrative bouquet, not Kensington's work.",
+    "label": "Something thoughtful",
+    "category": "everyday",
+    "status": "licensed-illustrative"
+  },
+  {
+    "id": "peony",
+    "url": "https://images.unsplash.com/photo-1592930452381-101e01765b86?auto=format&fit=crop&w=1600&q=85&fm=jpg",
+    "source": "https://unsplash.com/photos/1Vv-qzoSoow",
+    "creator": "Evie Fjord",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "alt": "A single deep pink peony with green leaves on a pale surface; illustrative floral detail.",
+    "label": "In the details",
+    "category": "everyday",
+    "status": "licensed-illustrative"
+  }
 ]

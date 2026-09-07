@@ -63,11 +63,14 @@ try {
   if(route===''||route==='wedding-garlands/'){
    for(const width of [320,390,768,1440]){
     await page.setViewportSize({width,height:width<700?844:1000});
-    await page.evaluate(()=>window.scrollTo(0,0));
+    await page.evaluate(()=>window.scrollTo({top:0,left:0,behavior:'instant'}));
+    await page.waitForFunction(()=>window.scrollY===0);
+    await page.waitForTimeout(100);
+    await page.mouse.move(0,0);
     await check(`No horizontal overflow: ${route||'home'} at ${width}px`,async()=>assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1)));
     if([390,1440].includes(width)){
      const name=`${route?'wedding':'home'}-${width}.png`;
-     await page.screenshot({path:path.join(output,name),fullPage:true});results.screenshots.push(name);
+     await page.screenshot({path:path.join(output,name),fullPage:true,animations:'disabled'});results.screenshots.push(name);
     }
    }
   }
